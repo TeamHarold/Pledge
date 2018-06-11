@@ -10,27 +10,32 @@ import XCTest
 @testable import Pledge
 
 class PledgeTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_pledgesAwait() {
+        let prom = Pledge<String> { res, rej in
+            res("lol")
         }
+        let val = prom.await()
+        XCTAssertTrue(val=="lol")
     }
     
+    func test_pledgesAsyncIsh() {
+        let prom = Pledge<String> { res, rej in
+            res("lol")
+        }
+        prom.then({x in print(x)}).err({x in print(x)}).finally({x in print(x)})
+        
+        sleep(1)
+        XCTAssertTrue(prom.returnedValue=="lol")
+    }
+    func test_pledgesAsyncIsh_EXTRA() {
+        let prom = Pledge<String> { res, rej in
+            res("lol")
+        }
+        prom.then({x in print(x)}).err({x in print(x)}).finally({x in print(x)})
+        
+        //sleep(1)
+        //if main is blocked retVal will never propagate YO
+        XCTAssertFalse(prom.returnedValue=="lol")
+    }
 }
+

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A00BBF3720C9648A00F196CA /* Pledge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00BBF2D20C9648A00F196CA /* Pledge.framework */; };
 		A00BBF3C20C9648A00F196CA /* PledgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00BBF3B20C9648A00F196CA /* PledgeTests.swift */; };
-		A00BBF3E20C9648A00F196CA /* Pledge.h in Headers */ = {isa = PBXBuildFile; fileRef = A00BBF3020C9648A00F196CA /* Pledge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A00BBF4820C964AB00F196CA /* Pledge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00BBF4720C964AB00F196CA /* Pledge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 
 /* Begin PBXFileReference section */
 		A00BBF2D20C9648A00F196CA /* Pledge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pledge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A00BBF3020C9648A00F196CA /* Pledge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pledge.h; sourceTree = "<group>"; };
 		A00BBF3120C9648A00F196CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A00BBF3620C9648A00F196CA /* PledgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PledgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00BBF3B20C9648A00F196CA /* PledgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PledgeTests.swift; sourceTree = "<group>"; };
 		A00BBF3D20C9648A00F196CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00BBF4720C964AB00F196CA /* Pledge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pledge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		A00BBF2F20C9648A00F196CA /* Pledge */ = {
 			isa = PBXGroup;
 			children = (
-				A00BBF3020C9648A00F196CA /* Pledge.h */,
 				A00BBF3120C9648A00F196CA /* Info.plist */,
+				A00BBF4720C964AB00F196CA /* Pledge.swift */,
 			);
 			path = Pledge;
 			sourceTree = "<group>";
@@ -93,7 +93,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00BBF3E20C9648A00F196CA /* Pledge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +147,7 @@
 				TargetAttributes = {
 					A00BBF2C20C9648A00F196CA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					A00BBF3520C9648A00F196CA = {
@@ -196,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00BBF4820C964AB00F196CA /* Pledge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +335,7 @@
 		A00BBF4220C9648A00F196CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = teamHarold.Pledge;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +358,7 @@
 		A00BBF4320C9648A00F196CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +380,7 @@
 		A00BBF4520C9648A00F196CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QW93L34FB9;
 				INFOPLIST_FILE = PledgeTests/Info.plist;
@@ -390,6 +395,7 @@
 		A00BBF4620C9648A00F196CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QW93L34FB9;
 				INFOPLIST_FILE = PledgeTests/Info.plist;
